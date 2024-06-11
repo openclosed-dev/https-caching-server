@@ -1,0 +1,4 @@
+.vscode/
+*.key
+*.crt
+*.csr

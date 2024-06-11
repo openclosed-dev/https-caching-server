@@ -1,0 +1,17 @@
+services:
+  proxy:
+    container_name: proxy
+    build:
+      context: ./
+      dockerfile: proxy/Dockerfile
+    image: squid-openssl:latest
+    ports:
+    - "3128:3128"
+  client:
+    container_name: client
+    build:
+      context: ./
+      dockerfile: client/Dockerfile
+    image: squid-client:latest
+    stdin_open: true
+    tty: true
